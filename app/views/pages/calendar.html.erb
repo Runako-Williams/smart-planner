@@ -1,25 +1,34 @@
-<h1>This is your Calendar</h1>
+<h1>Month View</h1>
 
-  <div class="month"> 
+<% focus = Date.today %>
+<% prim = Date.new(focus.year,focus.mon) %>
+
+
+<div class="month"> 
   <ul>
     <li class="prev">&#10094;</li>
     <li class="next">&#10095;</li>
-    <li>August<br><span style="font-size:18px">2017</span></li>
+    <li><%= focus.strftime("%b") %><br><span style="font-size:18px"><%= focus.strftime("%Y") %></span></li>
   </ul>
 </div>
 
 <ul class="weekdays">
+  <li>Su</li>
   <li>Mo</li>
   <li>Tu</li>
   <li>We</li>
   <li>Th</li>
   <li>Fr</li>
   <li>Sa</li>
-  <li>Su</li>
 </ul>
 
 <ul class="days">
-  <% for i in 1...36 do%>
+  <% for i in 0...prim.wday do%>
+    <li>
+      
+    </li>
+  <% end %>
+  <% for i in 1..focus.end_of_month.day do%>
     <li>
       <div class="schedule">
         <%= i %>
