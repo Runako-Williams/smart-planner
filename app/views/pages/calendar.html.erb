@@ -32,6 +32,11 @@
     <li>
       <div class="schedule">
         <%= i %>
+        <% d = Date.new(focus.year,focus.mon, i) %>
+        <% tasks = Task.where(duedate: d) %>
+          <% tasks.each do |t| %>
+            <%= t.description %>
+          <% end %>
       </div>
     </li>
   <% end %>

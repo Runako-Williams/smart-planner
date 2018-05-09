@@ -74,6 +74,10 @@ body {font-family: Verdana, sans-serif;}
   border: 1px solid rgba(0, 0, 0, .2);
 }
 
+.schedule ul {
+  font-size: small;
+}
+
 /* Highlight the "current" day */
 .days li .active {
     padding: 5px;
